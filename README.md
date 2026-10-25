@@ -27,3 +27,13 @@ once all the images were in my list, i used a label encoder to turn the text nam
 #### 5. checking the processed data
 
 Finally, i wrote a script to print out a summary of my work. i checked the total number of loaded images and labels, which was 7856 across 31 different classes. i also printed the shape of a single image, the minimum and maximum pixel values, and the new format of the labels to make sure the preparation step worked properly.
+
+#### 6. visualizing the images and class distribution
+
+after checking the numbers, i picked 6 random images from the processed data and displayed them in a grid with their text names and encoded numbers to visually check the pictures. i also drew a bar chart to count the number of images in each letter class so i could see how the data is distributed across the 31 categories.
+
+#### 7. splitting the data for training and testing
+
+in the last cell, i encoded the labels again and split the dataset into three parts to prepare it for the model. 1st i divided the data to keep 80 percent for training and 20 percent for testing, using a fixed random state of 42 to get the same split every time. then i split the 20 percent testing group in half to create a validation set and a final test set, giving each one (10 percent) of the total data. 
+
+after splitting, i converted all the feature and label sets into numpy arrays so the deep learning model can read them. finally, i printed the shapes of all the new arrays to check the results of the split. the numbers showed 6284 images for training, 786 images for validation, and 786 images for testing, with each image keeping its 224 by 224 by 3 shape and each label set matching the 31 classes.
